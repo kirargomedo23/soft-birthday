@@ -1,0 +1,22 @@
+<mat-card class="m-60 flex justify-center p-12">
+  <mat-card-content  >
+
+    <form [formGroup]="myForm" class="grid grid-rows-2 grid-cols-1" >
+      <mat-form-field  >
+        <mat-label>Usuario</mat-label>
+        <input matInput appTrimInput  formControlName="username"  />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input matInput    formControlName="password"  />
+      </mat-form-field>
+    </form>
+    
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="navigateTo()" mat-raised-button color="primary">
+      Iniciar sesión
+    </button>
+  </mat-card-actions>
+</mat-card>
