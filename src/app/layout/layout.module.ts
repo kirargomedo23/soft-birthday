@@ -7,6 +7,8 @@ import { LayoutComponent } from './layout.component';
 
 
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    MatSidenavModule
+    MatSidenavModule, MatDividerModule, MatIconModule
   ]
 })
 export class LayoutModule { }

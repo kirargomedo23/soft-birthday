@@ -1,6 +1,17 @@
 <router-outlet />
 <mat-drawer-container class="example-container">
-  <mat-drawer class="w-60" #drawer> I'm a drawer </mat-drawer>
+  <mat-drawer class="w-40" #drawer>
+    <ng-container *ngFor="let page of createPages()">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        [fontIcon]="page.fontIcon"
+      >
+      </mat-icon>
+      {{ page.name }}
+      <mat-divider></mat-divider>
+    </ng-container>
+  </mat-drawer>
   <mat-drawer-content>
     <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
   </mat-drawer-content>

@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { GuestsRoutingModule } from './guests-routing.module';
 
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    GuestsRoutingModule
+    GuestsRoutingModule,
+    MatTableModule
   ]
 })
 export class GuestsModule { }

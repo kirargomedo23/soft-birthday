@@ -4,25 +4,25 @@ import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule }   from '@angular/forms';
-import { TrimInputDirective } from '../shared/directives/trim-input/trim-input.directive';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms'; 
+import { TrimInputModule } from '../shared/directives/trim-input/trim-input.module';
 
 
 @NgModule({
   declarations: [
-    LoginComponent,
-    TrimInputDirective 
+    LoginComponent, 
   ],
   imports: [
     CommonModule,
     LoginRoutingModule,
+    TrimInputModule,
     FormsModule, ReactiveFormsModule,
-    MatCardModule, MatButtonModule,MatInputModule,
+    MatCardModule, MatButtonModule, MatInputModule,
     MatFormFieldModule
   ]
 })
