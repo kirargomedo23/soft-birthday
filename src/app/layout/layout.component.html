@@ -1,18 +1,33 @@
-<router-outlet />
 <mat-drawer-container class="example-container">
-  <mat-drawer class="w-40" #drawer>
+  <mat-drawer class="w-60" #drawer>
     <ng-container *ngFor="let page of createPages()">
-      <mat-icon
-        aria-hidden="false"
-        aria-label="Example home icon"
-        [fontIcon]="page.fontIcon"
-      >
-      </mat-icon>
-      {{ page.name }}
-      <mat-divider></mat-divider>
+      <div class="m-4 cursor-pointer " (click)="navigate(page.url)">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          [fontIcon]="page.fontIcon"
+        >
+        </mat-icon>
+        {{ page.name }}
+        <mat-divider></mat-divider>
+      </div>
     </ng-container>
   </mat-drawer>
   <mat-drawer-content>
-    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+    <mat-toolbar>
+      <button
+        (click)="drawer.toggle()"
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My App</span>
+      <span class="example-spacer"></span>
+    </mat-toolbar>
+    <div class="w-full">
+      <router-outlet />
+    </div>
   </mat-drawer-content>
 </mat-drawer-container>

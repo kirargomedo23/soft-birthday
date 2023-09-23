@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Nabvar } from './interfaces/nabvar.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -8,17 +9,32 @@ import { Nabvar } from './interfaces/nabvar.interface';
 })
 export class LayoutComponent {
 
+  
+
+  constructor(private readonly router: Router) {
+
+  }
+
+  public navigate(url: string) {
+    this.router.navigate([url]);
+  }
+
   public createPages(): Nabvar[] {
     return [
       {
         fontIcon: 'home',
         name: 'Mi cuenta',
-        url: 'home'
+        url: '/app/account'
       },
       {
         fontIcon: 'home',
-        name: 'Page2',
-        url: 'home',
+        name: 'Invitados',
+        url: '/app/guests',
+      },
+      {
+        fontIcon: 'home',
+        name: 'Caja de los Deseos',
+        url: '/app/wish-box',
       }
     ]
   }
