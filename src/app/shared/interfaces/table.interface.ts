@@ -1,7 +1,8 @@
 export interface Table { 
     displayedColumns: string[];
-    data: {
-        a : string; 
+    data: {  
         label: string;  
+        bagde: boolean;
+        column: string;
     } []
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+
 import { Table } from 'src/app/shared/interfaces/table.interface';
- 
+
 
 
 @Component({
@@ -8,32 +11,42 @@ import { Table } from 'src/app/shared/interfaces/table.interface';
   templateUrl: './guests.component.html',
   styleUrls: ['./guests.component.scss']
 })
-export class GuestsComponent  implements OnInit  {
+export class GuestsComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
- 
-  public info : Table  =   {
-    displayedColumns : ['name', 'age'],
+  public tableGuest: Table = {
+    displayedColumns: ['fullName', 'phone', 'state'],
     data: [
-      {
-        a : 'name',
-        label: 'Nombre'
+      { 
+        label: 'Nombres y Apellidos',
+        column: 'fullName',
+        bagde: false
       }
       ,
-      {
-        a : 'age',
-        label: 'Edad'
+      { 
+        label: 'Celular',
+        column: 'phone',
+        bagde: false,
+      },
+      { 
+        label: 'Estado',
+        column: 'state',
+        bagde: true
       }
     ]
-   } 
-
-  constructor( ){ 
   }
-   
+  public dataSource = new MatTableDataSource(this.tableGuest.data);
+  pageSize: number = 10;
+  pageIndex: number = 0;
+
+  constructor() {
+  }
+
   ngOnInit(): void {
-     
+
   }
 
+  public handlePageEvent(pageEvent: PageEvent) {
 
+  }
 
 }

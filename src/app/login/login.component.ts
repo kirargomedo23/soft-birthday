@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     console.log("asd: ", this.myForm.get('password')?.value);
     console.log("asd: ", this.myForm.get('password')?.value.length);
 
-    this.router.navigate(['/app']);
+    this.router.navigate(['/app/guests']);
   }
 
 }

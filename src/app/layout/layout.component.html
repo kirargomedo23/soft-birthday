@@ -1,7 +1,7 @@
 <mat-drawer-container class="example-container">
   <mat-drawer class="w-60" #drawer>
     <ng-container *ngFor="let page of createPages()">
-      <div class="m-4 cursor-pointer " (click)="navigate(page.url)">
+      <div class="m-3 cursor-pointer  " (click)="navigate(page.url)">
         <mat-icon
           aria-hidden="false"
           aria-label="Example home icon"
@@ -18,8 +18,7 @@
       <button
         (click)="drawer.toggle()"
         mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with menu icon"
+        class="example-icon" 
       >
         <mat-icon>menu</mat-icon>
       </button>
