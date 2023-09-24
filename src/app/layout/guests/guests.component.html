@@ -3,13 +3,13 @@
     <app-search />
     <br />
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <ng-container *ngFor="let d of tableGuest.data">
-        <ng-container matColumnDef="{{ d.column }}">
-          <th mat-header-cell *matHeaderCellDef>{{ d.label }}</th>
+      <ng-container *ngFor="let d of dataSource.data " >
+        <ng-container matColumnDef="{{ 'd[c]'  }}">
+          <th mat-header-cell *matHeaderCellDef>{{ '00'}}</th>
           <td mat-cell *matCellDef="let element">
             as
           </td>
-        </ng-container>
+        </ng-container> 
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="tableGuest.displayedColumns"></tr>
       <tr
